@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --white: #ffffff;
+  --green: #1db954;
+  --black: #0a0f1b;
+  --gray: #7f7e7e;
+  --Light: #5c5c5c4f;
+  --lightbshadow: rgba(0, 0, 0, 0.15);
+}
+body {
+  background: var(--black);
+}
+
+.container {
+  height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  overflow: hidden;
+  padding: 12px 20px;
+  background: var(--black);
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0px 0px 8px var(--white);
+}
+.wrapper i {
+  cursor: pointer;
+}
+.top-bar,
+.progress-area .song-timer,
+.controls,
+.music-list ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar {
+  color: var(--white);
+  margin-bottom: 70px;
+}
+.top-bar i {
+  font-size: 20px;
+}
+.top-bar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.top-bar P {
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+.top-bar span {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.img-area {
+  width: 296px;
+  height: 299px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: auto;
+}
+.img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.song-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.song-details div p:nth-child(1) {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+}
+.song-details div p:nth-child(2) {
+  color: var(--gray);
+  font-size: 10px;
+  margin-top: -3px;
+}
+.FavIcon {
+  font-size: 28px;
+  color: var(--white);
+}
+.favorite {
+  font-size: 29px;
+  color: var(--green);
+  transition: 1s;
+  animation: vibration 0.5s ease-out;
+}
+@keyframes vibration {
+  0% {
+    transform: translateX(0);
+    transform: rotate(0);
+  }
+  25% {
+    transform: translateX(-2px);
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: translateX(0);
+    transform: rotate(0);
+  }
+  75% {
+    transform: translateX(2px);
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: translateX(0);
+    transform: rotate(0);
+  }
+}
+.progress-area {
+  height: 3px;
+  width: 100%;
+  border-radius: 50px;
+  background: var(--Light);
+  cursor: pointer;
+}
+.progress-area .progress-bar {
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: var(--white);
+}
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  top: 50%;
+  right: -5px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: inherit;
+  transition: opacity 0.3s ease;
+}
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+.song-timer {
+  margin-top: 2px;
+  user-select: none;
+}
+.song-timer span {
+  font-size: 11px;
+  color: var(--gray);
+}
+.controls {
+  margin: 40px 0 5px 0;
+}
+.controls i {
+  user-select: none;
+  color: var(--white);
+}
+.controls > i:nth-child(1) {
+  font-size: 22px;
+  color: var(--green);
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+  font-size: 27px;
+}
+.controls #prev {
+  margin-right: -13px;
+}
+.controls #next {
+  margin-left: -13px;
+}
+.play-pause {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+}
+.play-pause i {
+  height: 43px;
+  width: 43px;
+  line-height: 43px;
+  text-align: center;
+  color: var(--black);
+  font-size: 20px;
+}
+.controls .minus {
+  position: relative;
+  font-size: 21px;
+}
+.controls .minus::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  background-color: var(--white);
+  transform: translate(-50%, -50%);
+}
+.repeat_one {
+  position: relative;
+}
+.repeat_one::after {
+  position: absolute;
+  content: "1";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  height: 10px;
+}
+.music-list {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  bottom: -55%;
+  pointer-events: none;
+  z-index: 5;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-out;
+  background: var(--black);
+}
+.music-list.show {
+  bottom: 0;
+  top: 0;
+  pointer-events: auto;
+}
+.header .image {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+}
+.header .image img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.header #BackBtn {
+  font-size: 22px;
+  color: var(--white);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+.header .row h3 {
+  font-size: 25px;
+  color: var(--white);
+}
+.header .row div img {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-bottom: -5px;
+}
+.header .row div span {
+  font-size: 10px;
+  color: var(--white);
+  letter-spacing: 0.1px;
+}
+.header .row span {
+  font-size: 10px;
+  color: var(--gray);
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  margin: 10px 0;
+}
+.icons div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-size: 20px;
+}
+
+.icons div .play-pause {
+  background: var(--green);
+}
+.icons .shuffle {
+  color: var(--green);
+}
+.music-list ul {
+  margin: 10px 0;
+  max-height: 330px;
+  overflow: auto;
+}
+.music-list ul::-webkit-scrollbar {
+  width: 0px;
+}
+.music-list ul li {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  padding-bottom: px;
+  margin-bottom: 4px;
+  color: var(--white);
+}
+.music-list ul li .row span {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.music-list ul li .row p {
+  color: var(--gray);
+  font-size: 11px;
+  margin-top: -3px;
+}
+ul li.playing {
+  pointer-events: none;
+  color: var(--green);
+}
+@media (max-width: 767px) {
+  .container {
+    height: auto;
+  }
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 12px 20px 0 20px;
+    box-shadow: none;
+  }
+  .wrapper i {
+    font-size: 33px;
+  }
+  .img-area {
+    width: 390px;
+    height: 390px;
+    margin: 100px auto 0;
+  }
+  .top-bar {
+    margin-bottom: -15px;
+  }
+  .top-bar div {
+    margin-top: 15px;
+  }
+  .top-bar i {
+    font-size: 30px;
+  }
+  .top-bar p {
+    font-size: 14px;
+  }
+  .top-bar span {
+    font-size: 18px;
+  }
+  .controls {
+    margin: 40px 0 5px 0;
+  }
+  .progress-area {
+    height: 4px;
+    margin: 25px 0 45px 0;
+  }
+  .song-details {
+    margin-top: 100px;
+  }
+  .song-details div p:nth-child(1) {
+    font-size: 30px;
+  }
+  .song-details div p:nth-child(2) {
+    font-size: 18px;
+  }
+  .song-timer span {
+    font-size: 15px;
+  }
+  .play-pause {
+    height: 70px;
+    width: 70px;
+  }
+  .controls > i:nth-child(1) {
+    font-size: 30px;
+  }
+  .controls i:nth-child(2),
+  .controls i:nth-child(4) {
+    font-size: 35px;
+  }
+  .controls #prev {
+    margin-right: -13px;
+  }
+  .controls #next {
+    margin-left: -13px;
+  }
+  .controls .minus {
+    font-size: 30px;
+  }
+  .music-list {
+    padding: 30px 20px;
+  }
+  .header .image {
+    margin: auto;
+    width: 250px;
+    height: 280px;
+  }
+  .header #BackBtn {
+    font-size: 31px;
+    top: 26px;
+    left: 20px;
+  }
+  .header .row {
+    margin-bottom: 10px;
+  }
+  .header .row h3 {
+    font-size: 33px;
+    margin-bottom: 7px;
+  }
+
+  .header .row div span {
+    font-size: 15px;
+  }
+  .header .row div img {
+    width: 20px;
+    height: 20px;
+  }
+  .header .row span {
+    font-size: 14px;
+  }
+  .music-list ul {
+    margin: 25px 0;
+    max-height: 338px;
+  }
+  .music-list ul li .row span {
+    font-size: 25px;
+  }
+  .music-list ul li .row p {
+    font-size: 13px;
+    margin-top: -3px;
+  }
+  .music-list ul li {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+}

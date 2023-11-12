@@ -452,13 +452,13 @@ ul li.playing {
   }
   .music-list ul {
     margin: 25px 0;
-    max-height: 338px;
+    max-height: 280px;
   }
   .music-list ul li .row span {
-    font-size: 23px;
+    font-size: 21px;
   }
   .music-list ul li .row p {
-    font-size: 11px;
+    font-size: 10px;
     margin-top: -4px;
   }
   .music-list ul li {

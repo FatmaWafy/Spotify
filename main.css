@@ -355,15 +355,10 @@ ul li.playing {
     box-shadow: none;
   }
   .wrapper i {
-    font-size: 33px;
-  }
-  .img-area {
-    width: 390px;
-    height: 390px;
-    margin: 100px auto 0;
+    font-size: 26px;
   }
   .top-bar {
-    margin-bottom: -15px;
+    margin-bottom: -25px;
   }
   .top-bar div {
     margin-top: 15px;
@@ -372,40 +367,48 @@ ul li.playing {
     font-size: 30px;
   }
   .top-bar p {
-    font-size: 14px;
+    font-size: 12px;
   }
   .top-bar span {
-    font-size: 18px;
+    font-size: 15px;
   }
-  .controls {
-    margin: 40px 0 5px 0;
+  .img-area {
+    width: 350px;
+    height: 350px;
+    margin: 80px auto 0;
+  }
+  .song-details {
+    margin-top: 80px;
+  }
+  .song-details div p:nth-child(1) {
+    font-size: 28px;
+  }
+  .song-details div p:nth-child(2) {
+    font-size: 16px;
+  }
+  .song-timer span {
+    font-size: 13px;
   }
   .progress-area {
     height: 4px;
-    margin: 25px 0 45px 0;
+    margin: 20px 0 30px 0;
   }
-  .song-details {
-    margin-top: 100px;
-  }
-  .song-details div p:nth-child(1) {
-    font-size: 30px;
-  }
-  .song-details div p:nth-child(2) {
-    font-size: 18px;
-  }
-  .song-timer span {
-    font-size: 15px;
+  .controls {
+    margin: 38px 0 0px 0;
   }
   .play-pause {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
+  }
+  .play-pause {
+    font-size: 25px;
   }
   .controls > i:nth-child(1) {
-    font-size: 30px;
+    font-size: 25px;
   }
   .controls i:nth-child(2),
   .controls i:nth-child(4) {
-    font-size: 35px;
+    font-size: 30px;
   }
   .controls #prev {
     margin-right: -13px;
@@ -414,7 +417,7 @@ ul li.playing {
     margin-left: -13px;
   }
   .controls .minus {
-    font-size: 30px;
+    font-size: 25px;
   }
   .music-list {
     padding: 30px 20px;
@@ -422,21 +425,21 @@ ul li.playing {
   .header .image {
     margin: auto;
     width: 250px;
-    height: 280px;
+    height: 250px;
   }
   .header #BackBtn {
-    font-size: 31px;
-    top: 26px;
-    left: 20px;
+    font-size: 33px;
+    top: 25px;
+    left: 19px;
   }
   .header .row {
     margin-bottom: 10px;
+    margin-top: 5px;
   }
   .header .row h3 {
-    font-size: 33px;
-    margin-bottom: 7px;
+    font-size: 30px;
+    margin-bottom: 5px;
   }
-
   .header .row div span {
     font-size: 15px;
   }
@@ -445,18 +448,18 @@ ul li.playing {
     height: 20px;
   }
   .header .row span {
-    font-size: 14px;
+    font-size: 13px;
   }
   .music-list ul {
     margin: 25px 0;
     max-height: 338px;
   }
   .music-list ul li .row span {
-    font-size: 25px;
+    font-size: 23px;
   }
   .music-list ul li .row p {
-    font-size: 13px;
-    margin-top: -3px;
+    font-size: 11px;
+    margin-top: -4px;
   }
   .music-list ul li {
     padding-bottom: 5px;

@@ -173,7 +173,7 @@ let allMusic = [
   {
     name: "سورة الاخلاص",
     artist: "Islam Sobhi",
-    img: "audio35",
+    src: "audio35",
   },
   {
     name: "سورة الفلق",
